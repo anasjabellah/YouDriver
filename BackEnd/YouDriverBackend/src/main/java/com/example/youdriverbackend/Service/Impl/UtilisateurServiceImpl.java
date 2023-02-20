@@ -14,11 +14,15 @@ import java.util.Optional;
 @Service
 public class UtilisateurServiceImpl  implements UtilisateurService {
 
-    @Autowired
     private UtilisateurRepository utilisateurRepository ;
 
-    @Autowired
     private RoleRepository roleRepository ;
+
+    @Autowired
+    public UtilisateurServiceImpl(UtilisateurRepository utilisateurRepository , RoleRepository roleRepository){
+        this.roleRepository = roleRepository ;
+        this.utilisateurRepository = utilisateurRepository ;
+    }
 
     @Override
     public List<Utilisateur> findAll() {
@@ -31,14 +35,14 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
     }
 
     @Override
-    public Utilisateur save(Utilisateur utilisateur){
+    public Utilisateur save(Utilisateur utilisateur , Long idRole){
         if (
                 utilisateur.getEmail() == null  ||
                 utilisateur.getUserName() == null
         ){
             utilisateur.setMessage("your email and UserName  is a null :( ");
         }
-
+        addRoleToUser(utilisateur.getId() , idRole);
         return utilisateurRepository.save(utilisateur);
 
     }
@@ -70,5 +74,9 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
         utilisateur.setRole(role);
     }
 
+    @Override
+    public List<Utilisateur> getAllByRole(String role) {
+        return utilisateurRepository.findByRole(role);
+    }
 
 }

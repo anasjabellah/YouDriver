@@ -4,13 +4,19 @@ import com.example.youdriverbackend.Entity.Role;
 import com.example.youdriverbackend.Repository.RoleRepository;
 import com.example.youdriverbackend.Service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RoleServiceImpl implements RoleService {
 
-    @Autowired
     private RoleRepository roleRepository ;
+
+    @Autowired
+    public RoleServiceImpl(RoleRepository roleRepository){
+        this.roleRepository = roleRepository ;
+    }
 
     @Override
     public Role save(Role role) {

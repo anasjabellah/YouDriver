@@ -12,7 +12,7 @@ public interface UtilisateurService {
 
     public Optional<Utilisateur> getOne(Long id);
 
-    public Utilisateur save(Utilisateur utilisateur);
+    public Utilisateur save(Utilisateur utilisateur ,  Long idRole);
 
     public Utilisateur update(Utilisateur utilisateur , Long id);
 
@@ -20,5 +20,8 @@ public interface UtilisateurService {
 
     public  Utilisateur getUserByName(String userName);
 
+    public List<Utilisateur> getAllByRole(String role);
+
     void addRoleToUser(Long idUser,Long RoelId);
+
 }
