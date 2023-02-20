@@ -16,7 +16,7 @@ public interface UtilisateurService {
 
     public Utilisateur update(Utilisateur utilisateur , Long id);
 
-    public List<Utilisateur>  getAllByName(String name);
+    public List<Utilisateur>  getAllByName(String firstName);
 
     public  Utilisateur getUserByName(String userName);
 

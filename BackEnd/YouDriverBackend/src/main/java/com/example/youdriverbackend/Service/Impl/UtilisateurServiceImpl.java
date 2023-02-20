@@ -14,15 +14,11 @@ import java.util.Optional;
 @Service
 public class UtilisateurServiceImpl  implements UtilisateurService {
 
+    @Autowired
     private UtilisateurRepository utilisateurRepository ;
 
-    private RoleRepository roleRepository ;
-
     @Autowired
-    public UtilisateurServiceImpl(UtilisateurRepository utilisateurRepository , RoleRepository roleRepository){
-        this.roleRepository = roleRepository ;
-        this.utilisateurRepository = utilisateurRepository ;
-    }
+    private RoleRepository roleRepository ;
 
     @Override
     public List<Utilisateur> findAll() {
@@ -58,13 +54,13 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
     }
 
     @Override
-    public List<Utilisateur> getAllByName(String name) {
-        return utilisateurRepository.findAllByName(name);
+    public List<Utilisateur> getAllByName(String firstName) {
+        return utilisateurRepository.findAllByFirstName(firstName);
     }
 
     @Override
     public Utilisateur getUserByName(String userName) {
-        return utilisateurRepository.findByName(userName);
+        return utilisateurRepository.findByUserName(userName);
     }
 
     @Override
@@ -76,7 +72,7 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
 
     @Override
     public List<Utilisateur> getAllByRole(String role) {
-        return utilisateurRepository.findByRole(role);
+        return utilisateurRepository.findAllByRole(role);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.youdriverbackend.Repository;
 
+import com.example.youdriverbackend.Entity.Role;
 import com.example.youdriverbackend.Entity.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,9 +10,9 @@ import java.util.List;
 @Repository
 public interface UtilisateurRepository extends JpaRepository<Utilisateur , Long> {
 
-    List<Utilisateur> findAllByName(String name);
+    List<Utilisateur> findAllByFirstName(String firstName);
 
-    Utilisateur findByName(String userName);
+    Utilisateur findByUserName(String userName);
 
-    List<Utilisateur> findByRole(String role);
+    List<Utilisateur> findAllByRole(String role);
 }
