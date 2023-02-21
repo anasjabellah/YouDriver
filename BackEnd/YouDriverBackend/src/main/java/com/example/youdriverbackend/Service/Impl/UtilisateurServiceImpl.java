@@ -31,14 +31,13 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
     }
 
     @Override
-    public Utilisateur save(Utilisateur utilisateur , Long idRole){
+    public Utilisateur save(Utilisateur utilisateur){
         if (
                 utilisateur.getEmail() == null  ||
                 utilisateur.getUserName() == null
         ){
             utilisateur.setMessage("your email and UserName  is a null :( ");
         }
-        addRoleToUser(utilisateur.getId() , idRole);
         return utilisateurRepository.save(utilisateur);
 
     }
@@ -72,7 +71,8 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
 
     @Override
     public List<Utilisateur> getAllByRole(String role) {
-        return utilisateurRepository.findAllByRole(role);
+        Role role1 = roleRepository.findByNameRole(role);
+        return utilisateurRepository.findAllByRole(role1);
     }
 
 }

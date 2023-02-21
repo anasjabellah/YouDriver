@@ -47,9 +47,9 @@ public class UtilisateurRessources {
         return  utilisateurService.getAllByRole(roleName);
     }
 
-    @PostMapping("user/save/{id}")
-    public Utilisateur save(@RequestBody Utilisateur utilisateur , @PathVariable Long id){
-        return utilisateurService.save(utilisateur , id);
+    @PostMapping("user/save")
+    public Utilisateur save(@RequestBody Utilisateur utilisateur){
+        return utilisateurService.save(utilisateur);
     }
 
 

@@ -12,7 +12,7 @@ public interface UtilisateurService {
 
     public Optional<Utilisateur> getOne(Long id);
 
-    public Utilisateur save(Utilisateur utilisateur ,  Long idRole);
+    public Utilisateur save(Utilisateur utilisateur );
 
     public Utilisateur update(Utilisateur utilisateur , Long id);
 
