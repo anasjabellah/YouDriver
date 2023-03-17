@@ -3,6 +3,7 @@ package com.example.youdriverbackend.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -14,6 +15,7 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    private Date date ;
 
     @OneToOne
     @JoinColumn(name = "utilisateur_id")

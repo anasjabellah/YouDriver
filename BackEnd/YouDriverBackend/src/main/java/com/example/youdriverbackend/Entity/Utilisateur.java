@@ -1,6 +1,8 @@
 package com.example.youdriverbackend.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,12 +27,18 @@ public class Utilisateur {
     private String tel ;
     private String address ;
 
-    private String message ;
 
+    @ManyToOne
+    @JoinColumn(name = "compagnie_id")
+    @JsonIgnore 
+    private Compagnie compagnie ;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role ;
+
+
+
 
 
 }

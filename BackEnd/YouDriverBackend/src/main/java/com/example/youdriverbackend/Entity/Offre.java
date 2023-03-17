@@ -15,11 +15,16 @@ public class Offre {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    private int nmbrPlaces ;
     private Date dateStart ;
+    private Date dateEnd ;
+    private String adresseDepart;
+    private String adresseArivee;
+
 
     @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
-    private Utilisateur utilisateur ;
+    @JoinColumn(name = "manager_id")
+    private Utilisateur manager ;
 
     @ManyToOne
     @JoinColumn(name = "vehicule_id")

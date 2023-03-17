@@ -22,6 +22,6 @@ public interface UtilisateurService {
 
     public List<Utilisateur> getAllByRole(String role);
 
-    void addRoleToUser(Long idUser,Long RoelId);
+    public    List<Utilisateur> getUtilisateurByCompagnie(Long id);
 
 }

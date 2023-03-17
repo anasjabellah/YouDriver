@@ -32,14 +32,7 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
 
     @Override
     public Utilisateur save(Utilisateur utilisateur){
-        if (
-                utilisateur.getEmail() == null  ||
-                utilisateur.getUserName() == null
-        ){
-            utilisateur.setMessage("your email and UserName  is a null :( ");
-        }
         return utilisateurRepository.save(utilisateur);
-
     }
 
     @Override
@@ -62,17 +55,18 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
         return utilisateurRepository.findByUserName(userName);
     }
 
-    @Override
-    public void addRoleToUser(Long idUser, Long RoelId) {
-        Utilisateur utilisateur = utilisateurRepository.findById(idUser).orElse(null);
-        Role role =  roleRepository.findById(RoelId).orElse(null);
-        utilisateur.setRole(role);
-    }
+
+
 
     @Override
     public List<Utilisateur> getAllByRole(String role) {
         Role role1 = roleRepository.findByNameRole(role);
         return utilisateurRepository.findAllByRole(role1);
+    }
+
+    @Override
+    public List<Utilisateur> getUtilisateurByCompagnie(Long id) {
+        return utilisateurRepository.getUtilisateursByCompagnieId(id);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.youdriverbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,7 +22,7 @@ public class Compagnie {
     private String tel ;
     private String address ;
 
-    @OneToMany
+    @OneToMany(mappedBy = "compagnie")
     List<Utilisateur> utilisateurList ;
 
 }

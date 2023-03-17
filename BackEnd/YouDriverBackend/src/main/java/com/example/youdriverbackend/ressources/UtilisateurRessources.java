@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/v1/Utilisateurs")
+@RequestMapping(path = "api/v1/")
 public class UtilisateurRessources {
 
 
@@ -21,7 +21,7 @@ public class UtilisateurRessources {
        this.utilisateurService = utilisateurService ;
    };
 
-    @GetMapping(path = "/")
+    @GetMapping(path = "Utilisateurs")
    public List<Utilisateur>  findAll(){
        return  utilisateurService.findAll();
    }
@@ -31,31 +31,38 @@ public class UtilisateurRessources {
         return utilisateurService.getAllByName(name);
     }
 
-    @GetMapping("name/{name}")
+    @GetMapping("Utilisateurs/name/{name}")
     public  Utilisateur getUserByName(@PathVariable String name){
         return utilisateurService.getUserByName(name);
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("Utilisateurs/id/{id}")
     public Optional<Utilisateur> getOne(@PathVariable Long id) {
         return utilisateurService.getOne(id);
     }
 
 
-    @GetMapping("role/{roleName}")
+    @GetMapping("Utilisateurs/role/{roleName}")
     public List<Utilisateur>  getAllByRole(@PathVariable String roleName){
         return  utilisateurService.getAllByRole(roleName);
     }
 
-    @PostMapping("user/save")
+    @PostMapping("Utilisateurs/user/save")
     public Utilisateur save(@RequestBody Utilisateur utilisateur){
         return utilisateurService.save(utilisateur);
     }
 
 
-    @PutMapping("/update/{id}")
+    @PutMapping("Utilisateurs/update/{id}")
     public   Utilisateur update(@RequestBody Utilisateur utilisateur , @PathVariable Long id ){
         return utilisateurService.update(utilisateur , id);
+    }
+
+
+
+    @GetMapping("Compagnie/{id}/Utilisateurs/")
+    public List<Utilisateur>  getAllByCompagnie(@PathVariable Long id){
+        return  utilisateurService.getUtilisateurByCompagnie(id);
     }
 
 
