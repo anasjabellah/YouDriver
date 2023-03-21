@@ -17,4 +17,6 @@ public interface VehiculeService {
 
     public Vehicule getByMatricule(String matricule);
 
+    public Vehicule getById(Long id);
+
 }

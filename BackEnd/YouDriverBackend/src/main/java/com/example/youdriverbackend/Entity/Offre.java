@@ -22,9 +22,10 @@ public class Offre {
     private String adresseArivee;
 
 
+
     @ManyToOne
-    @JoinColumn(name = "manager_id")
-    private Utilisateur manager ;
+    @JoinColumn(name = "compangnie_id")
+    private Compagnie compagnie ;
 
     @ManyToOne
     @JoinColumn(name = "vehicule_id")

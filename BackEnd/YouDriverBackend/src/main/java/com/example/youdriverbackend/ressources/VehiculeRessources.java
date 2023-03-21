@@ -53,6 +53,12 @@ public class VehiculeRessources {
         return vehiculeService.getByMatricule(Matricule);
     }
 
+    @GetMapping("compagnie/vehicule/{id}")
+    @ResponseBody
+    public Vehicule getById(@PathVariable("id") Long id){
+        return vehiculeService.getById(id);
+    }
+
 
 
 }

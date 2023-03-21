@@ -23,6 +23,7 @@ public class Compagnie {
     private String address ;
 
     @OneToMany(mappedBy = "compagnie")
+    @JsonIgnore
     List<Utilisateur> utilisateurList ;
 
 }

@@ -47,6 +47,10 @@ public class VehiculeServiceImpl implements VehiculeService {
         return vehiculeRepository.getByMatricule(matricule);
     }
 
+    @Override
+    public Vehicule getById(Long id) {
+        return vehiculeRepository.getById(id);
+    }
 
 
 }
