@@ -25,4 +25,8 @@ public class Reservation {
     @JoinColumn(name = "offre_id")
     private Offre offre ;
 
+    @ManyToOne
+    @JoinColumn(name = "compagnie_id")
+    private Compagnie compagnie ;
+
 }

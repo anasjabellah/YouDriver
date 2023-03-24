@@ -26,9 +26,14 @@ public class OffreServiceImpl  implements OffreService {
     }
 
     @Override
-    public List<Offre> GetAll(long id) {
+    public List<Offre> getAllOffer() {
+        return offreRepository.findAll();
+    }
+
+    @Override
+    public List<Offre> getAll(long id) {
         Compagnie compagnie = compagnieRepository.getById(id);
-        return offreRepository.findAllByCompagnie(compagnie);
+        return offreRepository.getAllByCompagnie(compagnie);
     }
 
     @Override
