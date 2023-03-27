@@ -45,7 +45,7 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public Reservation save(Reservation reservation) {
         Offre offre = offreRepository.getReferenceById(reservation.getOffre().getId());
-        Utilisateur utilisateur = utilisateurRepository.getById(reservation.getUtilisateur().getId());
+        Utilisateur utilisateur = utilisateurRepository.findUtilisateurById(reservation.getUtilisateur().getId());
         Compagnie compagnie = compagnieRepository.getById(reservation.getCompagnie().getId());
 
         if (
@@ -56,12 +56,19 @@ public class ReservationServiceImpl implements ReservationService {
         ){
             System.out.println("message : reservtion is not good");
         }
+
+
         reservation.setOffre(offre);
         reservation.setCompagnie(compagnie);
         reservation.setUtilisateur(utilisateur);
         reservation.setDate(reservation.getDate());
-
-        return reservationRepository.save(reservation);
+        
+        if(offre.getNmbrPlaces() == 0){
+            return null ;
+        }else {
+            offre.setNmbrPlaces(offre.getNmbrPlaces() - 1 );
+            return reservationRepository.save(reservation);
+        }
     }
 
     @Override

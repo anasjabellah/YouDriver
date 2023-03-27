@@ -21,7 +21,6 @@ public class CompagnieServiceImpl implements CompagnieService {
 
     @Override
     public Compagnie save(Compagnie compagnie) {
-
         return compagnieRepository.save(compagnie);
     }
 

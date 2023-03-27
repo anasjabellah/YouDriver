@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface OffreRepository extends JpaRepository<Offre, Long> {
     List<Offre> getAllByCompagnie(Compagnie compagnie);
+
+    List<Offre>  getAllByCompagnieId(Long id);
 }

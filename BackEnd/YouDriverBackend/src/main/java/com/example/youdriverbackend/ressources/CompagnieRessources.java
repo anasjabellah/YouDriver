@@ -20,6 +20,11 @@ public class CompagnieRessources {
         return compagnieService.save(compagnie);
     }
 
+    @PutMapping("compagnie/{id}/update")
+    public Compagnie update(@RequestBody Compagnie compagnie ,@PathVariable("id") Long id){
+        return compagnieService.update(compagnie,id);
+    }
+
 
     @GetMapping("compagnie/{id}")
     public Optional<Compagnie> getByid(@PathVariable Long id){

@@ -33,7 +33,7 @@ public class OffreServiceImpl  implements OffreService {
     @Override
     public List<Offre> getAll(long id) {
         Compagnie compagnie = compagnieRepository.getById(id);
-        return offreRepository.getAllByCompagnie(compagnie);
+        return offreRepository.getAllByCompagnieId(id);
     }
 
     @Override

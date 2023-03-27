@@ -1,5 +1,6 @@
 package com.example.youdriverbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class Offre {
 
     @ManyToOne
     @JoinColumn(name = "compangnie_id")
+    @JsonIgnore
     private Compagnie compagnie ;
 
     @ManyToOne
