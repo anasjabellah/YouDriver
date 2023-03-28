@@ -62,7 +62,7 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setCompagnie(compagnie);
         reservation.setUtilisateur(utilisateur);
         reservation.setDate(reservation.getDate());
-        
+
         if(offre.getNmbrPlaces() == 0){
             return null ;
         }else {
