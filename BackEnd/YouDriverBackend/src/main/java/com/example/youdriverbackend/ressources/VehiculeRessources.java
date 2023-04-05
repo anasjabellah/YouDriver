@@ -33,13 +33,6 @@ public class VehiculeRessources {
 
 
 
- //   @GetMapping("compagnie/Vehicules/isdisponible/{disponible}")
- //   @ResponseBody
-   // public List<Vehicule> getAllBydisponible(@PathVariable("disponible") boolean disponible){
-   //    return vehiculeService.disponible(disponible);
-   // }
-
-
     @GetMapping("compagnie/{id}/Vehicules")
     @ResponseBody
     public List<Vehicule> getAllByCom(@PathVariable("id") Long id){

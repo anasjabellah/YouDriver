@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="dashboard">
+                <span data-feather="home"></span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard/hotels">
+                <span data-feather="file"></span>
+                Hotels
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard/rooms">
+                <span data-feather="shopping-cart"></span>
+                Rooms
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard/reservations/1">
+                <span data-feather="shopping-cart"></span>
+                Reservation
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h3">Dashboard</h1>
+        </div>
+        <h1 class="h3">All Offers</h1>
+
+        <form class="row g-3">
+            <div class="col-md-6">
+              <label for="adresseDepart" class="form-label">adresse Depart</label>
+              <input type="text" class="form-control" id="adresseDepart">
+            </div>
+            <div class="col-md-6">
+              <label for="adresseArivee" class="form-label">adresse Arivee</label>
+              <input type="text" class="form-control" id="adresseArivee">
+            </div>
+            <div class="col-12">
+              <label for="dateStart" class="form-label">date Start</label>
+              <input type="date" class="form-control" id="dateStart" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+              <label for="dateEnd" class="form-label">date End</label>
+              <input type="date" class="form-control" id="dateEnd" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+              <label for="inputnmbr" class="form-label">nmbr Places</label>
+              <input type="number" class="form-control" id="inputnmbr">
+            </div>
+            <div class="col-md-6">
+              <label for="vehicule" class="form-label">vehicule</label>
+              <select id="vehicule" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Add Offer</button>
+            </div>
+          </form>
+        
+      </main>
+    </div>
+  </div>
