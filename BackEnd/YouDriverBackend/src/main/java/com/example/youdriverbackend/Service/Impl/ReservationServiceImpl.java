@@ -34,7 +34,13 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public List<Reservation> ListByComp(Long id) {
+
         return reservationRepository.findReservationsByCompagnie_Id(id);
+    }
+
+    @Override
+    public List<Reservation> ListByOffer(Long id) {
+        return reservationRepository.findReservationsByOffre_Id(id);
     }
 
     @Override

@@ -11,7 +11,7 @@ public interface OffreService {
 
     public List<Offre> getAllOffer();
     public List<Offre> getAll(long id);
-    public Offre save(Offre offre);
+    public Offre save(Offre offre , Long id);
 
 
 }

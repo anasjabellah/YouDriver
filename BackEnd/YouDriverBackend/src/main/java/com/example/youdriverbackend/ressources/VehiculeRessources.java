@@ -1,16 +1,19 @@
 package com.example.youdriverbackend.ressources;
 
 
+import com.example.youdriverbackend.Entity.Utilisateur;
 import com.example.youdriverbackend.Entity.Vehicule;
 import com.example.youdriverbackend.Service.VehiculeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
-@RequestMapping(path = "api/v1/")
+@CrossOrigin("http://localhost:4200")
+@RequestMapping(path = "compagnie")
 public class VehiculeRessources {
 
     private VehiculeService vehiculeService;
@@ -20,8 +23,8 @@ public class VehiculeRessources {
         this.vehiculeService = vehiculeService;
     }
 
-    @PostMapping("compagnie/{id}/Vehicule/save")
-    public Vehicule save(@RequestBody Vehicule vehicule , Long id){
+    @PostMapping("/{id}/Vehicule/save")
+    public Vehicule save(@RequestBody Vehicule vehicule ,@PathVariable("id") Long id){
         return vehiculeService.save(vehicule , id);
     }
 
@@ -33,25 +36,30 @@ public class VehiculeRessources {
 
 
 
-    @GetMapping("compagnie/{id}/Vehicules")
+    @GetMapping("/{id}/Vehicules")
     @ResponseBody
     public List<Vehicule> getAllByCom(@PathVariable("id") Long id){
         return  vehiculeService.getAllByComp(id);
     }
 
 
-    @GetMapping("compagnie/Vehicule/matricule={Matricule}")
+    @GetMapping("/Vehicule/matricule/{Matricule}")
     @ResponseBody
     public Vehicule getByMatricule(@PathVariable("Matricule") String Matricule){
         return vehiculeService.getByMatricule(Matricule);
     }
 
-    @GetMapping("compagnie/vehicule/{id}")
+    @GetMapping("/vehicule/{id}")
     @ResponseBody
-    public Vehicule getById(@PathVariable("id") Long id){
+    public Optional<Vehicule> getById(@PathVariable("id") Long id){
         return vehiculeService.getById(id);
     }
 
+
+    @PutMapping("/vehicule/update/{id}")
+    public Vehicule update(@RequestBody Vehicule vehicule,@PathVariable Long id ){
+        return vehiculeService.update(vehicule , id);
+    }
 
 
 }

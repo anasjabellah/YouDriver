@@ -4,8 +4,6 @@ import { HeaderAdminComponent } from './components/header-admin/header-admin.com
 import { HeaderManadgerComponent } from './components/header-manadger/header-manadger.component';
 import { HeaderuserComponent } from './components/headeruser/headeruser.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LayoutHomeComponent } from './components/layout-home/layout-home.component';
-import { LayoutHomeFooterComponent } from './components/layout-home-footer/layout-home-footer.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 
 

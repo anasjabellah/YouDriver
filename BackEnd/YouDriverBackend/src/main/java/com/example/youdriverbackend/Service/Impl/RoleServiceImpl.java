@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RoleServiceImpl implements RoleService {
@@ -22,7 +23,9 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role update(Role role, Long id) {
-        return null;
+        Role role1 = roleRepository.findById(id).orElse(null);
+        role1.setNameRole(role.getNameRole());
+        return roleRepository.save(role1);
     }
 
     @Override
@@ -33,6 +36,11 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public Role findByName(String name) {
         return roleRepository.findByNameRole(name);
+    }
+
+    @Override
+    public Optional<Role> findById(Long id) {
+        return roleRepository.findById(id);
     }
 
 }

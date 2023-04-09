@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VehiculeServiceImpl implements VehiculeService {
@@ -27,8 +28,12 @@ public class VehiculeServiceImpl implements VehiculeService {
     }
 
     @Override
-    public Vehicule update(Vehicule vehicule) {
-        return null;
+    public Vehicule update(Vehicule vehicule , Long id) {
+        Vehicule vehicule1 = vehiculeRepository.findById(id).orElse(null);
+        vehicule1.setMatricule(vehicule.getMatricule());
+        vehicule1.setType(vehicule.getType());
+        vehicule1.setNmbrPlaces(vehicule.getNmbrPlaces());
+        return vehiculeRepository.save(vehicule1);
     }
 
     @Override
@@ -48,8 +53,8 @@ public class VehiculeServiceImpl implements VehiculeService {
     }
 
     @Override
-    public Vehicule getById(Long id) {
-        return vehiculeRepository.getById(id);
+    public Optional<Vehicule> getById(Long id) {
+        return vehiculeRepository.findById(id);
     }
 
 

@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/v1/")
+@CrossOrigin("http://localhost:4200")
+@RequestMapping(path = "")
 public class UtilisateurRessources {
 
 
@@ -47,9 +48,9 @@ public class UtilisateurRessources {
         return  utilisateurService.getAllByRole(roleName);
     }
 
-    @PostMapping("Utilisateurs/user/save")
-    public Utilisateur save(@RequestBody Utilisateur utilisateur){
-        return utilisateurService.save(utilisateur);
+    @PostMapping("{id}/Utilisateurs/user/save")
+    public Utilisateur save(@RequestBody Utilisateur utilisateur ,@PathVariable Long id){
+        return utilisateurService.save(utilisateur,id);
     }
 
 
@@ -60,7 +61,7 @@ public class UtilisateurRessources {
 
 
 
-    @GetMapping("Compagnie/{id}/Utilisateurs/")
+    @GetMapping("Compagnie/{id}/Utilisateurs")
     public List<Utilisateur>  getAllByCompagnie(@PathVariable Long id){
         return  utilisateurService.getUtilisateurByCompagnie(id);
     }

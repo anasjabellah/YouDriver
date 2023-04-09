@@ -1,7 +1,9 @@
 package com.example.youdriverbackend.Service.Impl;
 
+import com.example.youdriverbackend.Entity.Compagnie;
 import com.example.youdriverbackend.Entity.Role;
 import com.example.youdriverbackend.Entity.Utilisateur;
+import com.example.youdriverbackend.Repository.CompagnieRepository;
 import com.example.youdriverbackend.Repository.RoleRepository;
 import com.example.youdriverbackend.Repository.UtilisateurRepository;
 import com.example.youdriverbackend.Service.UtilisateurService;
@@ -20,6 +22,9 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
     @Autowired
     private RoleRepository roleRepository ;
 
+    @Autowired
+    private CompagnieRepository compagnieRepository ;
+
     @Override
     public List<Utilisateur> findAll() {
         return utilisateurRepository.findAll();
@@ -31,7 +36,9 @@ public class UtilisateurServiceImpl  implements UtilisateurService {
     }
 
     @Override
-    public Utilisateur save(Utilisateur utilisateur){
+    public Utilisateur save(Utilisateur utilisateur , Long id){
+        Compagnie compagnie = compagnieRepository.getById(id);
+        utilisateur.setCompagnie(compagnie);
         return utilisateurRepository.save(utilisateur);
     }
 

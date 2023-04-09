@@ -15,6 +15,8 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date ;
 
     @OneToOne

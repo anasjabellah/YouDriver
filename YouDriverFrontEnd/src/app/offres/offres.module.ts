@@ -8,6 +8,8 @@ import { ShowOfferComponent } from './components/show-offer/show-offer.component
 import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
 import { AddOffersComponent } from './components/add-offers/add-offers.component';
 import { ListOffersComponent } from './components/list-offers/list-offers.component';
+import { OfferContainerComponent } from './components/offer-container/offer-container.component';
+import { RouterOutlet } from '@angular/router';
 
 
 
@@ -16,14 +18,16 @@ import { ListOffersComponent } from './components/list-offers/list-offers.compon
     ListOffersComponent,
     AddOffersComponent,
     ShowOfferComponent,
-    UpdateOfferComponent
+    UpdateOfferComponent,
+    OfferContainerComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    RouterOutlet
   ]
 })
 export class OffresModule { }

@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/v1/")
+@CrossOrigin("http://localhost:4200")
+@RequestMapping(path = "")
 public class ReservationRessources {
 
     @Autowired
@@ -25,6 +26,11 @@ public class ReservationRessources {
     @GetMapping("/compagnie/reservation/{id}")
     public Optional<Reservation> getByid(@PathVariable("id") Long id){
         return reservationService.getOne(id);
+    }
+
+    @GetMapping("/compagnie/offer/{id}/reservations")
+    public List<Reservation> findAllByOffer(@PathVariable("id") Long id){
+        return reservationService.ListByOffer(id);
     }
 
 

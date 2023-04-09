@@ -37,7 +37,9 @@ public class OffreServiceImpl  implements OffreService {
     }
 
     @Override
-    public Offre save(Offre offre) {
-        return null;
+    public Offre save(Offre offre , Long id) {
+        Compagnie compagnie = compagnieRepository.getById(id);
+        offre.setCompagnie(compagnie);
+        return offreRepository.save(offre);
     }
 }
