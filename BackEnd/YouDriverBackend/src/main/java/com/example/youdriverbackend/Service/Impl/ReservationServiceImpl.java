@@ -44,6 +44,11 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
+    public List<Reservation> ListByUser(Long id) {
+        return reservationRepository.findReservationsByUtilisateur_id(id);
+    }
+
+    @Override
     public Optional<Reservation> getOne(Long id) {
         return reservationRepository.findById(id);
     }

@@ -23,6 +23,12 @@ public class ReservationRessources {
         return reservationService.ListByComp(id);
     }
 
+
+    @GetMapping("/Utilisateur/{id}/reservations")
+    public List<Reservation> findAllByUser(@PathVariable("id") Long id){
+        return reservationService.ListByUser(id);
+    }
+
     @GetMapping("/compagnie/reservation/{id}")
     public Optional<Reservation> getByid(@PathVariable("id") Long id){
         return reservationService.getOne(id);

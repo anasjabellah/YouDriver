@@ -11,6 +11,8 @@ public interface ReservationService {
 
     List<Reservation>  ListByOffer(Long id);
 
+    List<Reservation> ListByUser(Long id);
+
     Optional<Reservation> getOne(Long id);
     Reservation save(Reservation reservation);
 
