@@ -1,0 +1,28 @@
+
+        <h1 class="h3">All Offers</h1>
+        <a href="offer/add"  class="btn mb-5 mt-3" style="background-color: #583f96; color: white;">add offer</a>
+        <div class="tabal-Hotel mt-1">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Depart</th>
+                  <th scope="col">Arivee</th>
+                  <th scope="col">nmbr Places</th>
+                  <th scope="col">matricule vehicule</th>
+                  <th scope="col" class="text-center">action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let offer of offers">
+                  <td>{{ offer.adresseArivee }}</td>
+                  <td>{{ offer.adresseDepart }}</td>
+                  <td>{{ offer.nmbrPlaces }}</td>
+                  <td>{{ offer.vehicule.matricule }}</td>
+                  <td class="text-center">
+                      <a href="offer/show/{{ offer.id }}" class="btn me-1" style="background-color: #715da3;">Show</a>
+                      <a href="offer/update/{{ offer.id }}" class="btn me-1" style="background-color: #ffaf8a;">update</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="min-height: 100vh; height: auto; background-color: #f38c55; color: #000;">
+
+        <div style="height: 200px; width: 200px;">
+          <img src="assets/img/Blue_Minimal_Car_Wash.png" style="width: 100% ; height: 100%;" alt="">
+        </div>
+
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" style="color: #000;" href="offer">
+                Offer
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #000;" href="vehicule">
+                vehicule
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #000;" href="role">
+                Role
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #000;" href="utilisateur">
+                Utilisateur
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #000;" href="reservation">
+                Reservation
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h3">Dashboard</h1>
+        </div>
+        <router-outlet></router-outlet>    
+      </main>
+    </div>
+  </div>

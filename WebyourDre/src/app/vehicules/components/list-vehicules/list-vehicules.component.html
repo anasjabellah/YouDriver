@@ -1,0 +1,26 @@
+
+<h1 class="h3">All Vehicules</h1>
+<a href="vehicule/add"  class="btn mb-5 mt-3" style="background-color: #583f96; color: white;">add vehicule</a>
+<div class="tabal-Hotel mt-1">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">matricule</th>
+          <th scope="col">nmbrPlaces</th>
+          <th scope="col">type</th>
+          <th scope="col" class="text-center">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicule of vehicules">
+          <td>{{ vehicule.matricule }}</td>
+          <td>{{ vehicule.nmbrPlaces }}</td>
+          <td>{{ vehicule.type }}</td>
+          <td class="text-center">
+              <a href="vehicule/show/{{ vehicule.id }}" class="btn me-1" style="background-color: #715da3;">Show</a>
+              <a href="vehicule/update/{{ vehicule.id }}" class="btn me-1" style="background-color: #ffaf8a;">update</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

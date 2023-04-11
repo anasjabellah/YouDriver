@@ -1,0 +1,36 @@
+
+<h1 class="h3">Update Offers</h1>
+
+
+<form class="row g-3"  [formGroup]="form" (ngSubmit)="submit()"  >
+    <div class="col-md-6">
+      <label for="adresseDepart" class="form-label">adresse Depart</label>
+      <input formControlName="adresseDepart" type="text" class="form-control" id="adresseDepart" name="adresseDepart">
+    </div>
+    <div class="col-md-6">
+      <label for="adresseArivee" class="form-label">adresse Arivee</label>
+      <input  value=""  formControlName="adresseArivee" type="text" class="form-control" id="adresseArivee" name="adresseArivee">
+    </div>
+    <div class="col-12">
+      <label for="dateStart" class="form-label">date Start</label>
+      <input  formControlName="dateStart" type="datetime-local" class="form-control" id="dateStart" name="dateStart">
+    </div>
+    <div class="col-12">
+      <label for="dateEnd" class="form-label">date End</label>
+      <input  formControlName="dateEnd" type="datetime-local" class="form-control" id="dateEnd" name="dateEnd" >
+    </div>
+    <div class="col-md-6">
+      <label for="inputnmbr" class="form-label">nmbr Places</label>
+      <input  formControlName="nmbrPlaces" type="number" class="form-control" id="nmbrPlaces" name="nmbrPlaces">
+    </div>
+    <div class="col-md-6">
+      <label for="vehicule" class="form-label">vehicule</label>
+      <select id="vehiculeId" class="form-select" name="vehiculeId" formControlName="vehiculeId">
+          <option *ngFor="let vehicule of vehicules" [value]="vehicule.id">{{"nmbrPlaces :"+ vehicule.nmbrPlaces }}{{ " , matricule :"+ vehicule.matricule }}</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Add Offer</button>
+    </div>
+  </form>

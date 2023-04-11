@@ -1,0 +1,11 @@
+<h1 class="h3">Add vehicule</h1>
+
+<form class="row g-3" [formGroup]="form" (ngSubmit)="submit()" >
+    <div class="col-12">
+      <label for="type" class="form-label">type</label>
+      <input  formControlName="nameRole" type="text" class="form-control" id="nameRole" name="nameRole" [value]="role?.nameRole " >
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Add Offer</button>
+    </div>
+  </form>

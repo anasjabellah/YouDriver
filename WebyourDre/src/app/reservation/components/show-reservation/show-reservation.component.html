@@ -1,0 +1,48 @@
+<table class="table" style=" width: 600px;">
+    <tbody>
+      <tr>
+        <th>id</th>
+        <td>#</td>
+      </tr>
+      <tr>
+        <th>adresseArivee</th>
+        <td>{{ Reservation?.date }}</td>
+      </tr>
+      <tr>
+        <th> adresse Depart</th>
+        <td >{{ Reservation?.offre?.adresseDepart }}</td>
+      </tr>
+      <tr>
+        <th> adresse Arivee</th>
+        <td >{{ Reservation?.offre?.adresseArivee }}</td>
+      </tr>
+      <tr>
+        <th>offer date Start</th>
+        <td >{{ Reservation?.offre?.dateStart }}</td>
+      </tr>
+      <tr>
+        <th>offer date End</th>
+        <td >{{ Reservation?.offre?.dateEnd }}</td>
+      </tr>
+      <tr>
+        <th>nmbrPlaces</th>
+        <td >{{ Reservation?.offre?.dateStart }}</td>
+      </tr>
+      <tr>
+        <th> offer nmbr Places</th>
+        <td >{{ Reservation?.offre?.nmbrPlaces }}</td>
+      </tr>
+      <tr>
+        <th>user name</th>
+        <td >{{ Reservation?.utilisateur?.userName }}</td>
+      </tr>
+      <tr>
+        <th>email</th>
+        <td >{{ Reservation?.utilisateur?.email }}</td>
+      </tr>
+      <tr>
+        <th>address</th>
+        <td >{{ Reservation?.utilisateur?.address }}</td>
+      </tr>
+    </tbody>
+</table>

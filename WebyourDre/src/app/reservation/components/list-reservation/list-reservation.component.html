@@ -1,0 +1,18 @@
+
+<h1 class="h3">All offer</h1>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let offer of offers" >
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">adresseArivee :  {{ offer.adresseArivee }}</p>
+          <p class="card-text">adresseDepart : {{ offer.adresseDepart }}</p>
+          <p class="card-text">nmbrPlaces : {{ offer.nmbrPlaces }}</p>
+          <p class="card-text mb-3">matricule : {{ offer.vehicule.matricule }}</p>
+          <a href="reservation/offer/{{ offer.id }}" class="btn me-1" style="background-color: #715da3; color: white;">Show</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+
+<h1 class="h3">Add vehicule</h1>
+<form class="row g-3" [formGroup]="form"  (ngSubmit)="submit()">
+    <div class="col-md-6">
+      <label for="matricule" class="form-label">matricule</label>
+      <input  formControlName="matricule" type="text" class="form-control" id="matricule" name="matricule" value="{{ vehicule?.matricule }}" [value]="vehicule?.matricule ">
+    </div>
+    <div class="col-md-6">
+      <label for="nmbrPlaces" class="form-label">nmbrPlaces</label>
+      <input  formControlName="nmbrPlaces" type="number" class="form-control" id="nmbrPlaces" name="nmbrPlaces" value="{{ vehicule?.nmbrPlaces }}"  [value]="vehicule?.nmbrPlaces">
+    </div>
+    <div class="col-12">
+      <label for="type" class="form-label">type</label>
+      <input  formControlName="type" type="text" class="form-control" id="type" name="type"  value="{{ vehicule?.type }}"  [value]="vehicule?.type">
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Add Offer</button>
+    </div>
+  </form>

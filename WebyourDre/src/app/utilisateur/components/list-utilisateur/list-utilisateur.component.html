@@ -1,0 +1,28 @@
+
+<h1 class="h3">All Utilisateur</h1>
+<a href="utilisateur/add"  class="btn mb-5 mt-3" style="background-color: #583f96; color: white;">add utilisateur</a>
+<div class="tabal-Hotel mt-1">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">userName</th>
+          <th scope="col">email</th>
+          <th scope="col">tel</th>
+          <th scope="col">address</th>
+          <th scope="col" class="text-center">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let utilisateur of utilisateurs ">
+          <td>{{ utilisateur.userName }}</td>
+          <td>{{ utilisateur.email }}</td>
+          <td>{{ utilisateur.tel }}</td>
+          <td>{{ utilisateur.address }}</td>
+          <td class="text-center">
+              <a href="utilisateur/show/{{ utilisateur.id }}" class="btn me-1" style="background-color: #715da3;">Show</a>
+              <a href="utilisateur/update/{{ utilisateur.id }}" class="btn me-1" style="background-color: #ffaf8a;">update</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,314 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --text-color: #583f96;
+    --btn-color: #f38c55;
+    --back-color: #f9fafe ;
+    --color-blck: #333333 ;
+    --tow-btn :  #ff854b ;
+  }
+ 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 400;
+    overflow-x: hidden;
+ }
+
+html {
+    overflow-x: hidden; 
+}
+
+p {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 26px;
+    margin-bottom: 0; 
+}
+
+a:hover, a:focus {
+    color: #000; 
+}
+
+a {
+    color: var(--text-color);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; 
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--text-color); 
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+ }
+
+ul li {
+    list-style: none;
+ }
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none; 
+}
+
+a:not([href]):not([tabindex]) {
+    color: #fff; 
+}
+
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: #fff; 
+}  
+
+
+/* hader and nav bar */
+
+
+header{
+    padding: 40px 20px;
+    height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul{
+    align-items: baseline;
+    display: flex;
+}
+
+nav ul i{
+    font-size: 25px;
+    color: var(--btn-color);
+    margin-right: 30px;
+}
+
+nav ul li{
+    margin: 10px;
+    padding: 10px;
+}
+
+nav ul li a{
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    text-decoration: dashed;
+}
+
+.btnSign{
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.signUp{
+    background-color: var(--tow-btn);
+    color: var(--back-color);
+    border: 3px solid var(--tow-btn);
+    margin-left: 5px;
+}
+
+.signIn{
+    border: 3px solid var(--tow-btn);
+    color: var(--tow-btn);
+}
+
+
+.haderContent{
+    margin-top: 60px;
+}
+
+.haderContenr{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentTextHader{
+    width: 50%
+}
+
+.contantImageHader{
+    width: 50%;
+}
+
+.contantImageHader img{
+    width: 90%;
+    height: 90%;
+}
+
+.contentTextHader p:first-child{
+    display: inline-block;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 10px 15px;
+    background-color: var(--tow-btn);
+    color: var(--back-color);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.text2{
+    font-weight: 900;
+    text-transform: capitalize;
+    line-height: 55px;
+    font-size: 50px;
+}
+
+.text3{
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#services{
+    margin: 50px 0;
+}
+
+#services .services-item {
+    padding: 60px 30px;
+    border: 1px solid #ddd;
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease; 
+}
+#services .services-item:hover {
+    border: 1px solid var(--text-color);
+    box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
+    -moz-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease; 
+}
+#services .services-item .icon {
+    background: #ebe3ff;
+    width: 110px;
+    height: 110px;
+    margin: 0px auto;
+    margin-bottom: 0px;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 25px; 
+}
+#services .services-item .icon i {
+    font-size: 40px;
+    color: var(--text-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%; 
+}
+#services .services-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #151948;
+    margin-bottom: 15px; 
+}
+#services .services-item p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #5e629c; 
+}
+
+
+/* ==========================================================================
+business-plan Section 
+========================================================================== */
+#business-plan {padding-bottom: 130px; }
+#business-plan .container-fluid {padding-right: 30px;padding-left: 30px; }
+#business-plan .business-item-info {margin-top: 60px; }
+#business-plan .business-item-info h3 {font-size: 35px;font-weight: 600;margin-bottom: 25px; }
+#business-plan .business-item-info p {font-size: 16px;margin-bottom: 20px; }
+
+/* ==========================================================================
+Features 
+========================================================================== */
+#features {background: #f9f9f9; }
+#features .featured-bg {background: #fff; }
+#features .featured-border1 {border-bottom: 1px solid #ededed;border-right: 1px solid #ededed; }
+#features .featured-border2 {border-bottom: 1px solid #ededed; }
+#features .featured-border3 {border-right: 1px solid #ededed; }
+#features .feature-item {
+    padding: 30px;
+    overflow: hidden;
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease;
+}
+#features .feature-item .feature-icon {
+    background: #f3e3ff;
+    width: 100px;
+    height: 100px;
+    margin: 0px auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 30px;
+    border: 1px solid var(--text-color);
+    margin-top: 12px; 
+}
+#features .feature-item .feature-icon i {
+    font-size: 40px;
+    color: var(--text-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32%; 
+}
+#features .feature-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+ }
+#features .feature-item p {font-size: 16px;display: block; }
+#features .feature-item:hover {
+
+    box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease; 
+}
+#features .feature-item:hover .feature-icon {
+    background: var(--text-color);
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease; 
+}
+#features .feature-item:hover .feature-icon i {
+    color: #fff;
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease; 
+}
+  

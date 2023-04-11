@@ -1,0 +1,18 @@
+<h1 class="h3">All reservation</h1>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let Reservation of Reservations" >
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">date Reservation : {{ Reservation.date }}</p>
+          <p class="card-text">adresse Depart : {{ Reservation.offre.adresseDepart }}</p>
+          <p class="card-text">adresse Arivee : {{ Reservation.offre?.adresseArivee }}</p>
+          <p class="card-text">date Start : {{ Reservation.offre?.dateStart }}</p>
+          <p class="card-text mb-2">user Name  : {{ Reservation.utilisateur?.userName }}</p>
+          <a href="dashboard/reservation/show/{{ Reservation.id }}" class="btn me-1" style="background-color: #715da3; color: white;">Show</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
